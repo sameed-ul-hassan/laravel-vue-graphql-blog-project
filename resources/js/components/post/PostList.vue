@@ -5,9 +5,18 @@
 </template>
 
 <script>
-    // export default {
-    //     name: "PostList"
-    // }
+    import gql from "graphql-tag";
+    export default {
+        name: "PostList",
+        apollo:{
+            posts : gql`{
+                posts{
+                    id
+                    title
+                }
+            }`
+        }
+    }
 </script>
 
 <style scoped>
