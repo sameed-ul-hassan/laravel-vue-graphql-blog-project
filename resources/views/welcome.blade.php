@@ -8,14 +8,6 @@
         <script src="{{mix('js/app.js')}}" defer></script>
     </head>
     <body>
-    <nav>
-        <a href="/">
-            Post List
-        </a>
-        <a href="/post/1">
-            Post
-        </a>
-    </nav>
     <div id="app">
         <router-view></router-view>
     </div>

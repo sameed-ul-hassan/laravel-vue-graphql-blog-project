@@ -5,7 +5,7 @@
         </router-link>
         <p class="text-gray-600 pb-3">{{post.lead}}</p>
         <div class="text-sm text-gray-600">
-            By Sameed Ul Hassan&nbsp; in Link&nbsp; 3 hours ago
+            By {{post.author.name}}&nbsp;in <router-link class="underline hover:text-black" :to="{name: 'topic',params: {slug:post.topic.slug}}">{{post.topic.name}}</router-link>&nbsp3 hours ago
         </div>
     </div>
 </template>

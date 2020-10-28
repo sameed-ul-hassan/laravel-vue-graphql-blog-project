@@ -7,7 +7,7 @@ import './bootstrap';
 //import components
 import PostList from './components/post/PostList';
 import Post from './components/post/Post'
-
+import TopicPostList from "./components/post/TopicPostList";
 window.Vue = Vue;
 Vue.use(VueRouter);
 
@@ -21,6 +21,11 @@ const routes = [
         path : '/post/:id',
         name : 'post',
         component : Post
+    },
+    {
+        path : '/topic/:slug',
+        name : 'topic',
+        component : TopicPostList
     }
 ];
 
