@@ -9,6 +9,7 @@ import PostList from "./components/post/PostList";
 import Post from "./components/post/Post";
 import TopicPostList from "./components/post/TopicPostList";
 import AuthorPostList from "./components/post/AuthorPostList";
+import NotFound from "./components/NotFound";
 window.Vue = Vue;
 Vue.use(VueRouter);
 
@@ -29,8 +30,13 @@ const routes = [{
     },
     {
         path: "/authors/:id",
-        name: "authoe",
+        name: "author",
         component: AuthorPostList
+    },
+    {
+        path: "*",
+        name: "404",
+        component: NotFound
     }
 ];
 
@@ -48,6 +54,12 @@ const router = new VueRouter({
     mode: "history",
     routes
 });
+
+import moment from "moment";
+
+Vue.filter("timeago", value => moment(value).fromNow());
+Vue.filter("longDate", value => moment(value).format("MMMM DD YYYY"));
+
 const app = new Vue({
     el: "#app",
     apolloProvider,
